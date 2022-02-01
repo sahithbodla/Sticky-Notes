@@ -1,2 +1,2 @@
-# sticky-Notes
- A notes app
+# Sticky-Notes
+ 

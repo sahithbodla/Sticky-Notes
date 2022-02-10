@@ -1,20 +1,11 @@
-import styled from "styled-components"
+import styled from "styled-components";
+export const HeroSvg = styled.svg`
+  margin: 1rem;
+`;
 
-export const Svg= styled.svg`
-margin:1rem;
-position:absolute;
-z-index:-1
-
-`
-
-
-
-
-
-export const HeroSvg = () => {
-  return (
-    <>
-      <Svg
+export function Hero(){
+  return(
+    <HeroSvg
         width="1003.67004"
         height="595.29205"
         viewBox="0 0 1003.67004 595.29205"
@@ -324,7 +315,11 @@ export const HeroSvg = () => {
           transform="translate(-98.16498 -152.35398)"
           fill="#2f2e41"
         />
-      </Svg>
-    </>
-  );
-};
+      </HeroSvg>
+
+  )
+}
+
+
+
+

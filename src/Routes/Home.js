@@ -1,8 +1,9 @@
-import {HeroSvg} from '../Svgs/hero'
+import { Hero } from "../Svgs/hero";
+
 export function Home() {
-    return (
-      <>
-        <HeroSvg/>
-      </>
-    );
-  }
+  return (
+    <>
+        <Hero/>
+    </>
+  );
+}

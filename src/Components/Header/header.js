@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { SearchBar } from "..";
+import { useThemeContext } from "../../Context/themeContext";
 import { Menu, ToggleOff, ToggleOn } from "../../Svgs";
 import { Navbar, ToggleButton } from "./style";
 
@@ -10,8 +10,9 @@ function themeChanger(theme, setTheme) {
   setTheme((flag) => !flag);
 }
 
+
 export function Header() {
-  const [theme, setTheme] = useState(false);
+  const {theme, setTheme}=useThemeContext()
   return (
     <Navbar>
       <Menu />

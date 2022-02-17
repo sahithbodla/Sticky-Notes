@@ -11,5 +11,5 @@ export const Navbar = styled.div`
 export const ToggleButton = styled.button`
   background-color: transparent;
   border: none;
-  color:white;
+  color:var(--primary-color);
 `;

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState,useRef } from "react";
+import { NewNote } from "../../Components/NewNote/newNote";
 import {
   NotesBody,
   NotesHolder,
@@ -6,22 +7,25 @@ import {
   NoteFeatures,
   AddNotes,
   ListOfNotes,
+  Notes,
   NotesValue,
 } from "./style";
 export let arrayOfNotes = [];
 export function Home() {
   const [title, setTitle] = useState("");
   const [InputNotes, setInputNotes] = useState(false);
-  const [notesContent, setNotesConetent] = useState("");
+  const [notesContent, setNotesContent] = useState("");
+  let noteRef=useRef(null)
   function addNote() {
     if (title !== "" && notesContent !== "") {
       arrayOfNotes = [...arrayOfNotes, { title, notesContent }];
     }
     setTitle("");
-    setNotesConetent("");
+    noteRef.current.innerText=''
   }
 
   return (
+    <>
     <NotesBody>
       <NotesHolder>
         {InputNotes && (
@@ -33,24 +37,28 @@ export function Home() {
           />
         )}
         <NotesValue
-          value={notesContent}
+          contentEditable="true"
+          role="textbox"
+          ref={noteRef}
           onClick={() => setInputNotes(true)}
-          onChange={(event) => setNotesConetent(event.target.value)}
-          placeholder="Take Notes Here..."
-        />
+          onInput={(event) =>
+            setNotesContent(event.target.innerText)
+          }
+        >
+        </NotesValue>
         {InputNotes && (
           <NoteFeatures>
             <AddNotes onClick={() => addNote()}>ADD</AddNotes>
           </NoteFeatures>
         )}
       </NotesHolder>
-      {arrayOfNotes.length !== 0 &&
-        arrayOfNotes.map(({ title, notesContent }) => (
-          <ListOfNotes key={title}>
-            <h5>{title}</h5>
-            <p>{notesContent}</p>
-          </ListOfNotes>
-        ))}
     </NotesBody>
+        <ListOfNotes>
+        {arrayOfNotes.length !== 0 &&
+          arrayOfNotes.map(({ title, notesContent }) => (
+            <NewNote title={title} notesContent={notesContent}   />
+          ))}
+        </ListOfNotes>
+    </>
   );
 }

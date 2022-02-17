@@ -11,7 +11,7 @@ export const NotesHolder=styled.div`
 margin:5rem;
 padding:0.5rem;
 width:500px;
-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+box-shadow: var(--box-color-tb) 0px 3px 6px, var(--box-color-rl) 0px 3px 6px;
 border-radius:1rem;
 `
 export const Title=styled(Input)`
@@ -21,12 +21,19 @@ font-size:${props=>props.name==='title'?'x-large':'large'}
 `
 export const PrimaryButton=styled.button`
 background-color:transparent;
-border-color:var(--nav-bar);
-border-radius:0.2rem;
+border:none;
+border-radius:0.3rem;
 padding:0.4rem 1rem;
 margin:1rem;
+cursor:pointer;
+color:var(--secondary-color);
+
 `
-export const NotesValue= styled.textarea`
+export const NotesValue= styled.div`
+
+&:empty::before{
+    content:'Take Notes Here...'
+}
 border:none;
 outline:none;
 resize: none;
@@ -35,12 +42,19 @@ padding:0.5rem;
 font-size:large
 `
 
-export const AddNotes=styled(PrimaryButton)``
+export const AddNotes=styled(PrimaryButton)`
+background-color:var( --add-btn);
+font-weight:bold;
+color:var(--secondary-color)
+&:hover{
+    color:var(--primary-color)
+}
+
+`
 export const NoteFeatures=styled(NotesBody)``
-export const ListOfNotes=styled.div`
-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;   
-    border-radius:1rem;
-    padding:1rem;
-    width:fitContent;
-    height:9rem;
+export const ListOfNotes=styled(NotesBody)`
+flex-direction:row;
+align-items:center;
+justify-content:center;
+flex-wrap:wrap;
 `

@@ -1,15 +1,13 @@
 import { useState,useRef } from "react";
-import { NewNote } from "../../Components/NewNote/newNote";
 import {
   NotesBody,
   NotesHolder,
   Title,
   NoteFeatures,
   AddNotes,
-  ListOfNotes,
-  Notes,
   NotesValue,
 } from "./style";
+import {ListOfNotes} from '../../Components/NewNote/newNote'
 export let arrayOfNotes = [];
 export function Home() {
   const [title, setTitle] = useState("");
@@ -52,13 +50,9 @@ export function Home() {
           </NoteFeatures>
         )}
       </NotesHolder>
+      <ListOfNotes/>
     </NotesBody>
-        <ListOfNotes>
-        {arrayOfNotes.length !== 0 &&
-          arrayOfNotes.map(({ title, notesContent }) => (
-            <NewNote title={title} notesContent={notesContent}   />
-          ))}
-        </ListOfNotes>
+  
     </>
   );
 }

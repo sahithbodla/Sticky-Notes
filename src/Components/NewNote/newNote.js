@@ -1,12 +1,14 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { arrayOfNotes } from "../../Routes/Home/Home";
 import { NotesHolder, NotesValue } from "../../Routes/Home/style";
+import { SelectColors } from "../ColorPallete/colorSelector";
 
 export const NotesList = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
+  justify-content: center;
 `;
 export const NotesTitle = styled(NotesValue)`
   font-weight: bolder;
@@ -18,6 +20,7 @@ export const NotesTitle = styled(NotesValue)`
 `;
 export const Notes = styled(NotesHolder)`
   width: 320px;
+  margin: 1rem;
 `;
 export const NotesContent = styled(NotesValue)`
   width: 300px;
@@ -26,16 +29,23 @@ export const ListOfNotes = () => {
   return (
     <NotesList>
       {arrayOfNotes.length !== 0 &&
-        arrayOfNotes.map(({ title, notesContent }) => (
-          <Notes>
-            <NotesTitle contentEditable="true" role="textbox">
-              {title}
-            </NotesTitle>
-            <NotesContent contentEditable="true" role="textbox">
-              {notesContent}
-            </NotesContent>
-          </Notes>
+        arrayOfNotes.map(({ title, notesContent,noteColor }) => (
+          <NewNote title={title} notesContent={notesContent} noteColor={noteColor} />
         ))}
     </NotesList>
+  );
+};
+export const NewNote = ({ title, notesContent,noteColor }) => {
+  const [color, setColor] = useState(noteColor);
+  return (
+    <Notes style={{ backgroundColor: `${color }` }}>
+      <NotesTitle contentEditable="true" role="textbox">
+        {title}
+      </NotesTitle>
+      <NotesContent contentEditable="true" role="textbox">
+        {notesContent}
+      </NotesContent>
+      <SelectColors setNoteColor={setColor} />
+    </Notes>
   );
 };

@@ -8,15 +8,17 @@ import {
   NotesValue,
 } from "./style";
 import {ListOfNotes} from '../../Components/NewNote/newNote'
+import { SelectColors } from "../../Components/ColorPallete/colorSelector";
 export let arrayOfNotes = [];
 export function Home() {
   const [title, setTitle] = useState("");
   const [InputNotes, setInputNotes] = useState(false);
   const [notesContent, setNotesContent] = useState("");
+  const [noteColor,setNoteColor]=useState('var(--primary-color)')
   let noteRef=useRef(null)
   function addNote() {
     if (title !== "" && notesContent !== "") {
-      arrayOfNotes = [...arrayOfNotes, { title, notesContent }];
+      arrayOfNotes = [...arrayOfNotes, { title, notesContent,noteColor }];
     }
     setTitle("");
     noteRef.current.innerText=''
@@ -25,9 +27,10 @@ export function Home() {
   return (
     <>
     <NotesBody>
-      <NotesHolder>
+      <NotesHolder style={{backgroundColor:`${noteColor}`}}>
         {InputNotes && (
           <Title
+           style={{backgroundColor:`${noteColor}`}}
             name={"title"}
             value={title}
             onChange={(event) => setTitle(event.target.value)}
@@ -46,13 +49,13 @@ export function Home() {
         </NotesValue>
         {InputNotes && (
           <NoteFeatures>
+            <SelectColors setNoteColor={setNoteColor}/>
             <AddNotes onClick={() => addNote()}>ADD</AddNotes>
           </NoteFeatures>
         )}
       </NotesHolder>
-      <ListOfNotes/>
+      <ListOfNotes noteColor={noteColor}/>
     </NotesBody>
-  
     </>
   );
 }

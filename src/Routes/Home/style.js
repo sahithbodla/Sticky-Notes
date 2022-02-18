@@ -51,7 +51,11 @@ color:var(--secondary-color)
 }
 
 `
-export const NoteFeatures=styled(NotesBody)``
+export const NoteFeatures=styled(NotesBody)`
+flex-direction:row;
+justify-content:space-between;
+padding:0.5rem;
+`
 export const ListOfNotes=styled(NotesBody)`
 flex-direction:row;
 align-items:center;

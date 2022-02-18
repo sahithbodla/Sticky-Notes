@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const HeroSvg = styled.svg`
-  margin:1rem 0rem 0 2rem..........................;
+  margin:1rem 0rem 0 2rem;
   width:auto;
 `;
 

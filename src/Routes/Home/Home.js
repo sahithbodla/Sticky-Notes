@@ -7,6 +7,7 @@ import {
   AddNotes,
   NotesValue,
 } from "./style";
+import { v4 as id } from 'uuid';
 import { ListOfNotes } from "../../Components/NewNote/newNote";
 import { SelectColors } from "../../Components/ColorPallete/colorSelector";
 import {notesReducer} from '../../Reducers/noteReducer'
@@ -47,7 +48,7 @@ export function Home() {
           {InputNotes && (
             <NoteFeatures>
               <SelectColors setNoteColor={setNoteColor} />
-              <AddNotes onClick={() => addNote(noteRef,dispatch,title,notesContent,noteColor)}>ADD</AddNotes>
+              <AddNotes onClick={() => addNote(noteRef,dispatch,title,notesContent,noteColor,id())}>ADD</AddNotes>
             </NoteFeatures>
           )}
         </NotesHolder>
@@ -58,7 +59,7 @@ export function Home() {
 }
 
 
-export function addNote(noteRef,dispatch,title,notesContent,noteColor) {
+export function addNote(noteRef,dispatch,title,notesContent,noteColor,id) {
   if (title !== "" && notesContent !== "") {
     dispatch({
       type: "CREATE_NEW_NOTE",
@@ -66,6 +67,7 @@ export function addNote(noteRef,dispatch,title,notesContent,noteColor) {
         title: title,
         notesContent: notesContent,
         noteColor: noteColor,
+        id:id
       },
     });
   }

@@ -1,4 +1,4 @@
-import { useState, useRef, useReducer } from "react";
+import { useState, useRef, useReducer, useEffect } from "react";
 import {
   NotesBody,
   NotesHolder,
@@ -7,19 +7,27 @@ import {
   AddNotes,
   NotesValue,
 } from "./style";
-import { v4 as id } from 'uuid';
+import { v4 as id } from "uuid";
 import { ListOfNotes } from "../../Components/NewNote/newNote";
 import { SelectColors } from "../../Components/ColorPallete/colorSelector";
-import {notesReducer} from '../../Reducers/noteReducer'
+import { notesReducer } from "../../Reducers/noteReducer";
 export function Home() {
   const [InputNotes, setInputNotes] = useState(false);
-  const[noteColor,setNoteColor]=useState('var(--primary-color)')
-  const [state, dispatch] = useReducer(notesReducer,{
+  const [noteColor, setNoteColor] = useState("var(--primary-color)");
+  const [state, dispatch] = useReducer(notesReducer, {
     title: "",
     notesContent: "",
     arrayOfNotes: [],
   });
-  const {title,notesContent,arrayOfNotes}=state;
+  const { title, notesContent, arrayOfNotes } = state;
+  useEffect(() => {
+    const notesFromLocalStorage = JSON.parse(localStorage?.getItem("notes"));
+    dispatch({
+      type: "SET_NOTES",
+      payload: notesFromLocalStorage === null ? [] : notesFromLocalStorage,
+    });
+  }, []);
+
   let noteRef = useRef(null);
   return (
     <>
@@ -48,7 +56,20 @@ export function Home() {
           {InputNotes && (
             <NoteFeatures>
               <SelectColors setNoteColor={setNoteColor} />
-              <AddNotes onClick={() => addNote(noteRef,dispatch,title,notesContent,noteColor,id())}>ADD</AddNotes>
+              <AddNotes
+                onClick={() =>
+                  addNote(
+                    noteRef,
+                    dispatch,
+                    title,
+                    notesContent,
+                    noteColor,
+                    id()
+                  )
+                }
+              >
+                ADD
+              </AddNotes>
             </NoteFeatures>
           )}
         </NotesHolder>
@@ -58,8 +79,7 @@ export function Home() {
   );
 }
 
-
-export function addNote(noteRef,dispatch,title,notesContent,noteColor,id) {
+export function addNote(noteRef, dispatch, title, notesContent, noteColor, id) {
   if (title !== "" && notesContent !== "") {
     dispatch({
       type: "CREATE_NEW_NOTE",
@@ -67,10 +87,10 @@ export function addNote(noteRef,dispatch,title,notesContent,noteColor,id) {
         title: title,
         notesContent: notesContent,
         noteColor: noteColor,
-        id:id
+        id: id,
       },
     });
   }
-  dispatch({type:'SET_TITLE',payload:''})
+  dispatch({ type: "SET_TITLE", payload: "" });
   noteRef.current.innerText = "";
 }

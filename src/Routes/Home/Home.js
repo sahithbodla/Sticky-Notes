@@ -6,6 +6,7 @@ import {
   NoteFeatures,
   AddNotes,
   NotesValue,
+  ClearNotes,
 } from "./style";
 import { v4 as id } from "uuid";
 import { ListOfNotes } from "../../Components/NewNote/newNote";
@@ -14,6 +15,7 @@ import { notesReducer } from "../../Reducers/noteReducer";
 export function Home() {
   const [InputNotes, setInputNotes] = useState(false);
   const [noteColor, setNoteColor] = useState("var(--primary-color)");
+  let noteRef = useRef(null);
   const [state, dispatch] = useReducer(notesReducer, {
     title: "",
     notesContent: "",
@@ -26,9 +28,8 @@ export function Home() {
       type: "SET_NOTES",
       payload: notesFromLocalStorage === null ? [] : notesFromLocalStorage,
     });
+    noteRef.current.focus();
   }, []);
-
-  let noteRef = useRef(null);
   return (
     <>
       <NotesBody>
@@ -48,7 +49,9 @@ export function Home() {
             contentEditable="true"
             role="textbox"
             ref={noteRef}
-            onClick={() => setInputNotes(true)}
+            onClick={() => {
+              setInputNotes(true);
+            }}
             onInput={(event) =>
               dispatch({ type: "SET_CONTENT", payload: event.target.innerText })
             }
@@ -56,6 +59,9 @@ export function Home() {
           {InputNotes && (
             <NoteFeatures>
               <SelectColors setNoteColor={setNoteColor} />
+              <ClearNotes onClick={() => clearNotes(dispatch, noteRef)}>
+                CLEAR
+              </ClearNotes>
               <AddNotes
                 onClick={() =>
                   addNote(
@@ -78,7 +84,10 @@ export function Home() {
     </>
   );
 }
-
+export function clearNotes(dispatch, noteRef) {
+  noteRef.current.innerText = "";
+  dispatch({ type: "SET_TITLE", payload: "" });
+}
 export function addNote(noteRef, dispatch, title, notesContent, noteColor, id) {
   if (title !== "" && notesContent !== "") {
     dispatch({

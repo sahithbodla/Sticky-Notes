@@ -44,15 +44,19 @@ font-size:large
 
 export const AddNotes=styled(PrimaryButton)`
 background-color:var( --add-btn);
-font-weight:bold;
+font-weight:600;
+font-size:large;
 color:var(--secondary-color)
-&:hover{
-    color:var(--primary-color)
-}
 
+`
+export const ClearNotes=styled(PrimaryButton)`
+color:blue;
+font-weight:600;
+font-size:large;
 `
 export const NoteFeatures=styled(NotesBody)`
 flex-direction:row;
+align-items:center;
 justify-content:space-between;
 padding:0.5rem;
 `

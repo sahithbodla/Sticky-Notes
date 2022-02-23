@@ -21,6 +21,8 @@ export const notesReducer = (state, { type, payload }) => {
         ...state,
         arrayOfNotes: state.arrayOfNotes.filter(({ id }) => id !== payload),
       };
+    case "ADD_LABEL":
+      return { ...state, tags: [...state.tags, { name: payload }] };
     default:
       return { ...state };
   }

@@ -63,11 +63,15 @@ export const AddLabel = styled.div`
   background-color:var(--primary-color);
   top: 5rem;
   box-shadow: var(--box-color-tb) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  padding:0.5rem 1.5rem;
   left:10rem;
+
 `;
 export const Label=styled.label`
-margin: 0.5rem 0;
+padding:0.5rem 1.5rem;
+&:hover{
+  background-color: rgb(239 246 255);
+}
+
 `;
 export const InputTag=styled.input`
 outline:none;
@@ -90,3 +94,12 @@ export const ListOfNotes = styled(NotesBody)`
   justify-content: center;
   flex-wrap: wrap;
 `;
+export const DivTag=styled.div`
+cursor:pointer;
+padding:0.5rem;
+display:flex;
+align-items:center;
+&:hover{
+  background-color: rgb(239 246 255);
+}
+`

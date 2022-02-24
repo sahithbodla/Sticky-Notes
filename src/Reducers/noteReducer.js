@@ -12,6 +12,8 @@ export const notesReducer = (state, { type, payload }) => {
       return { ...state, title: payload };
     case "SET_CONTENT":
       return { ...state, notesContent: payload };
+    case "SET_LABEL_TO_NOTE":
+      return { ...state, label: payload };
     case "DELETE_NOTE":
       localStorage.setItem(
         "notes",
@@ -21,8 +23,8 @@ export const notesReducer = (state, { type, payload }) => {
         ...state,
         arrayOfNotes: state.arrayOfNotes.filter(({ id }) => id !== payload),
       };
-    case "ADD_LABEL":
-      return { ...state, tags: [...state.tags, { name: payload }] };
+    case "CREATE_NEW_LABEL":
+      return { ...state, tags: [...state.tags, { name: payload }] }
     default:
       return { ...state };
   }

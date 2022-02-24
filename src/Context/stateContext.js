@@ -8,10 +8,11 @@ export const StateProvider=({children})=>{
         title: "",
         notesContent: "",
         arrayOfNotes: [],
+        label:'remainder',
         tags :[
           {
             name: "remainder",
-            listOfTags: [],
+            listOfNotes: [],
           },
         ]
       });

@@ -7,6 +7,7 @@ import {
   AddNotes,
   NotesValue,
   ClearNotes,
+  DivTag,
 } from "./style";
 import { v4 as id } from "uuid";
 import { ListOfNotes } from "../../Components/NewNote/newNote";
@@ -18,7 +19,7 @@ export function clearNotes(dispatch, noteRef) {
   noteRef.current.innerText = "";
   dispatch({ type: "SET_TITLE", payload: "" });
 }
-export function addNote(noteRef, dispatch, title, notesContent, noteColor, id) {
+export function addNote(noteRef, dispatch, title, notesContent, noteColor, id,label) {
   if (title !== "" && notesContent !== "") {
     dispatch({
       type: "CREATE_NEW_NOTE",
@@ -27,6 +28,7 @@ export function addNote(noteRef, dispatch, title, notesContent, noteColor, id) {
         notesContent: notesContent,
         noteColor: noteColor,
         id: id,
+        label:label
       },
     });
   }
@@ -35,9 +37,10 @@ export function addNote(noteRef, dispatch, title, notesContent, noteColor, id) {
 }
 export function Home() {
   const {
-    state: { title, notesContent, arrayOfNotes },
-    dispatch,
+    state: { title, notesContent,label },
+    dispatch
   } = UseStateContext();
+  console.log('2',{label})
   const [InputNotes, setInputNotes] = useState(false);
   const [openTag, setOpenTag] = useState(false);
   const [noteColor, setNoteColor] = useState("var(--primary-color)");
@@ -80,8 +83,12 @@ export function Home() {
           {InputNotes && (
             <NoteFeatures>
               <SelectColors setNoteColor={setNoteColor} />
-              <More setOpenTag={setOpenTag} />
-              {openTag && <LabelList />}
+              <DivTag onClick={()=>setOpenTag(flag=>!flag)}>
+              <span >{label}</span>
+              <More/>
+              </DivTag>
+              
+              {openTag && <LabelList setOpenTag={setOpenTag}/>}
               <ClearNotes onClick={() => clearNotes(dispatch, noteRef)}>
                 CLEAR
               </ClearNotes>
@@ -93,7 +100,8 @@ export function Home() {
                     title,
                     notesContent,
                     noteColor,
-                    id()
+                    id(),
+                    label
                   )
                 }
               >
@@ -102,7 +110,7 @@ export function Home() {
             </NoteFeatures>
           )}
         </NotesHolder>
-        <ListOfNotes arrayOfNotes={arrayOfNotes} dispatch={dispatch} />
+        <ListOfNotes id={id()} />
       </NotesBody>
     </>
   );

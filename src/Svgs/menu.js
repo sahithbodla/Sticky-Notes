@@ -8,12 +8,16 @@ export function Menu() {
     </svg>
   );
 }
-export function More({setOpenTag}) {
+export function More() {
   return (
-    <svg onClick={()=>setOpenTag(flag=>!flag)} width="1.5em" height="1.5em" viewBox="0 0 24 24">
+    <svg
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+    >
       <path
         fill="currentColor"
-        d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2Z"
+        d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6l1.41-1.41z"
       ></path>
     </svg>
   );

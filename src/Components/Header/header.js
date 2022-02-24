@@ -9,7 +9,6 @@ export function Header() {
       <Menu />
       <SearchBar />
         {theme==='Dark' ?<ToggleOff/>:<ToggleOn />}
-      {/* </ToggleButton> */}
     </Navbar>
   );
 }

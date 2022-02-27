@@ -9,11 +9,9 @@ import { Notes, NotesContent, NotesTitle } from "./style";
 
 export const NewNote = ({ id, title, notesContent, noteColor, label }) => {
   const { dispatch } = UseStateContext();
-  const [localTag, setLocalTag] = useState(label);
-  const [color, setColor] = useState(noteColor);
   const [openTag, setOpenTag] = useState(false);
   return (
-    <Notes style={{ backgroundColor: `${color}` }}>
+    <Notes style={{ backgroundColor: `${noteColor}` }}>
       <NotesTitle contentEditable="true" role="textbox">
         {title}
       </NotesTitle>
@@ -21,15 +19,14 @@ export const NewNote = ({ id, title, notesContent, noteColor, label }) => {
         {notesContent}
       </NotesContent>
       <NoteFeatures>
-        <SelectColors setNoteColor={setColor} />
+        <SelectColors id={id}/>
         <DivTag onClick={() => setOpenTag((flag) => !flag)}>
-          <span>{localTag}</span>
+          <span>{label}</span>
           <More />
         </DivTag>
         {openTag && (
           <LabelList
             id={id}
-            setLocalTag={setLocalTag}
             setOpenTag={setOpenTag}
           />
         )}

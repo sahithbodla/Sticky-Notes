@@ -2,6 +2,12 @@ export const notesReducer = (state, { type, payload }) => {
   switch (type) {
     case "SET_NOTES":
       return { ...state, arrayOfNotes: payload };
+    case 'UPDATE_NOTE':
+      localStorage.setItem(
+        "notes",
+        JSON.stringify(payload)
+      );
+      return { ...state, arrayOfNotes:  payload};
     case "CREATE_NEW_NOTE":
       localStorage.setItem(
         "notes",

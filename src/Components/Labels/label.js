@@ -9,10 +9,10 @@ import {
 import { AddIcon } from "../../Svgs/addIcon";
 import { createNewLabel } from "../../Utils/util";
 
-export function LabelList({ setOpenTag,id,setLocalTag }) {
+export function LabelList({ setOpenTag,id }) {
   console.log(setOpenTag)
   const {
-    state: { tags },
+    state: {arrayOfNotes, tags },
     dispatch,
   } = UseStateContext();
   const [openLabelcreator, setLabelcreator] = useState(false);
@@ -26,7 +26,12 @@ export function LabelList({ setOpenTag,id,setLocalTag }) {
             onClick={() => {
               setOpenTag(false);
               if(id){
-                setLocalTag(name)
+                dispatch({
+                  type: "UPDATE_NOTE",
+                  payload: arrayOfNotes.map((note) =>
+                    note.id === id ? { ...note, label: name } : note
+                  ),
+                });
               }else{
                 dispatch({ type: "SET_LABEL_TO_NOTE", payload: name });
               }

@@ -5,7 +5,7 @@ import {
   CreateButton,
   InputTag,
   Label,
-} from "../../Routes/Home/style";
+} from "../../Routes/Home/Homepage.style";
 import { AddIcon } from "../../Svgs/addIcon";
 import { createNewLabel } from "../../Utils/util";
 

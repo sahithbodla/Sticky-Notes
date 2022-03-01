@@ -1,5 +1,5 @@
 import { UseStateContext } from "../../Context/stateContext";
-import { Color, ColorPicker, colors } from "./style";
+import { Color, ColorPicker, colors } from "./colorSelector.style";
 
 export function changeColor(
   dispatch,

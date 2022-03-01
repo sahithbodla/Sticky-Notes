@@ -1,12 +1,13 @@
 import { SearchBar } from "..";
 import { useThemeContext } from "../../Context/themeContext";
-import { Menu, ToggleOff, ToggleOn } from "../../Svgs";
-import { Navbar } from "./style";
+import { ToggleOff, ToggleOn } from "../../Svgs";
+import { Navbar } from "./header.style";
 export function Header() {
   const { theme } = useThemeContext();
   return (
     <Navbar>
-      <Menu />
+      {/* <Menu /> */}
+      <h2>Sticky Notes</h2>
       <SearchBar />
         {theme==='Dark' ?<ToggleOff/>:<ToggleOn />}
     </Navbar>

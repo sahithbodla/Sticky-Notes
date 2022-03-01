@@ -1,5 +1,5 @@
 import { UseStateContext } from "../../Context/stateContext";
-import { Title } from "../../Routes/Home/style";
+import { Title } from "../../Routes/Home/Homepage.style";
 
 export const TitleDiv = ({noteColor}) => {
     const {

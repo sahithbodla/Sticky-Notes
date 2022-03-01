@@ -1,5 +1,5 @@
 import { UseStateContext } from "../../Context/stateContext";
-import { NotesValue } from "../../Routes/Home/style";
+import { NotesValue } from "../../Routes/Home/Homepage.style";
 
 export const NotesDiv =({noteRef,setInputNotes})=>{
     const {

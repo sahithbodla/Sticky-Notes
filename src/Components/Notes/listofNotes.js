@@ -1,6 +1,6 @@
 import { UseStateContext } from "../../Context/stateContext";
 import { NewNote } from "./newNote";
-import { NotesList } from "./style";
+import { NotesList } from "./notes.style";
 
 export const ListOfNotes = () => {
     const {

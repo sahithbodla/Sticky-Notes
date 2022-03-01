@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { UseStateContext } from "../../Context/stateContext";
-import { DivTag, NoteFeatures } from "../../Routes/Home/style";
+import { DivTag, NoteFeatures } from "../../Routes/Home/Homepage.style";
 import { DeleteIcon } from "../../Svgs";
 import { More } from "../../Svgs/menu";
 import { SelectColors } from "../ColorPallete/colorSelector";
 import { LabelList } from "../Labels/label";
-import { Notes, NotesContent, NotesTitle } from "./style";
+import { Notes, NotesContent, NotesTitle } from "./notes.style";
 
 export const NewNote = ({ id, title, notesContent, noteColor, label }) => {
   const { dispatch } = UseStateContext();

@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import {
   NotesBody,
   NotesHolder,
-} from "./style";
+} from "./Homepage.style";
 import { v4 as id } from "uuid";
 import { ListOfNotes } from "../../Components/Notes/listofNotes";
 import { UseStateContext } from "../../Context/stateContext";

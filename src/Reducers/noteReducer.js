@@ -29,7 +29,13 @@ export const notesReducer = (state, { type, payload }) => {
         ...state,
         arrayOfNotes: state.arrayOfNotes.filter(({ id }) => id !== payload),
       };
+    case "SET_LABELS":
+      return { ...state, tags:payload}
     case "CREATE_NEW_LABEL":
+      localStorage.setItem(
+        "label",
+        JSON.stringify([...state.tags, { name: payload }] )
+      );
       return { ...state, tags: [...state.tags, { name: payload }] }
     default:
       return { ...state };

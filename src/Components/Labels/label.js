@@ -24,7 +24,6 @@ export function LabelList({ setOpenTag,id }) {
           {/* <CheckBox onChange={} type="checkbox" /> */}
           <span
             onClick={() => {
-              setOpenTag(false);
               if(id){
                 dispatch({
                   type: "UPDATE_NOTE",
@@ -35,6 +34,7 @@ export function LabelList({ setOpenTag,id }) {
               }else{
                 dispatch({ type: "SET_LABEL_TO_NOTE", payload: name });
               }
+              setOpenTag(false);
             }}>
             {name}
           </span>

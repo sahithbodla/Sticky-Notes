@@ -69,7 +69,7 @@ export const AddLabel = styled.div`
 export const Label=styled.label`
 padding:0.5rem 1.5rem;
 &:hover{
-  background-color: rgb(239 246 255);
+  background-color: var(--box-hover);
 }
 
 `;
@@ -100,6 +100,6 @@ padding:0.5rem;
 display:flex;
 align-items:center;
 &:hover{
-  background-color: rgb(239 246 255);
+  background-color: var(--box-hover);
 }
 `

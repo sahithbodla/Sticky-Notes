@@ -13,6 +13,7 @@
   --add-btn:#6366f1;
   --box-color-tb:rgba(0, 0, 0, 0.16);
   --box-color-rl:rgba(0, 0, 0, 0.23);
+  --box-hover:rgb(239 246 255);
 }
 body{
   position:relative;
@@ -20,6 +21,7 @@ body{
   line-height:24px
 }
 [data-theme='light']{
+  --box-hover:rgb(239 246 255);
   --primary-color:white;
   --secondary-color:black;
   --box-color-tb:rgba(0, 0, 0, 0.16);
@@ -28,6 +30,7 @@ body{
     color:var(--secondary-color)
 }
 [data-theme='dark']{
+  --box-hover:rgb(26, 22, 22);
   --primary-color:black;
   --secondary-color:white;
   --box-color-tb:rgba(248, 245, 245, 0.897);

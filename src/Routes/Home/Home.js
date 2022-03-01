@@ -22,7 +22,7 @@ export function Home() {
       payload: notesFromLocalStorage === null ? [] : notesFromLocalStorage,
     });
     noteRef.current.focus();
-  }, [dispatch]);
+  },[dispatch]);
   return (
     <>
       <NotesBody>

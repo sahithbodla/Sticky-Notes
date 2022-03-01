@@ -7,8 +7,8 @@
   position:relative;
 }
 :root{
-  --primary-color:white;
-  --secondary-color:black;
+  --primary-color:#dadbee;
+  --secondary-color:rgba(0, 0, 0, 0.911);
   --nav-bar:#6366f1;
   --add-btn:#6366f1;
   --box-color-tb:rgba(0, 0, 0, 0.16);
@@ -18,12 +18,13 @@
 body{
   position:relative;
   font-family: "Montserrat","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  line-height:24px
+  line-height:24px;
 }
 [data-theme='light']{
   --box-hover:rgb(239 246 255);
-  --primary-color:white;
-  --secondary-color:black;
+  --primary-color:#f0f0f7;
+  --nav-bar:#6366f1;
+  --secondary-color:rgba(0, 0, 0, 0.911);
   --box-color-tb:rgba(0, 0, 0, 0.16);
   --box-color-rl:rgba(0, 0, 0, 0.23);
     background-color: var(--primary-color);
@@ -31,8 +32,9 @@ body{
 }
 [data-theme='dark']{
   --box-hover:rgb(26, 22, 22);
-  --primary-color:black;
-  --secondary-color:white;
+  --nav-bar:rgba(0, 0, 0, 0.911);
+  --primary-color:rgba(0, 0, 0, 0.911);
+  --secondary-color:#f0f0f7;
   --box-color-tb:rgba(248, 245, 245, 0.897);
   --box-color-rl:#f8f5f5fa;
     color: var(--secondary-color);

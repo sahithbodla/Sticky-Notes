@@ -17,6 +17,6 @@ export const useThemeContext = () => {
 export function themeChanger(theme) {
   localStorage.setItem("theme", JSON.stringify(theme));
   theme === "Light"
-    ? document.documentElement.setAttribute("data-theme", "dark")
-    : document.documentElement.setAttribute("data-theme", "light");
+    ? document.documentElement.setAttribute("data-theme", "light")
+    : document.documentElement.setAttribute("data-theme", "dark");
 }

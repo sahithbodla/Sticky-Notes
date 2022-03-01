@@ -1,4 +1,4 @@
-import { AddNotes, ClearNotes, DivTag, NoteFeatures } from "../../Routes/Home/style"
+import { AddNotes, ClearNotes, DivTag, NoteFeatures } from "../../Routes/Home/Homepage.style"
 import { SelectColors } from "../ColorPallete/colorSelector"
 import { LabelList } from "../Labels/label";
 import { v4 as id } from "uuid";

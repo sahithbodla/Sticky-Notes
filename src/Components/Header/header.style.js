@@ -2,9 +2,10 @@ import styled from "styled-components";
 export const Navbar = styled.div`
   display:flex;
   justify-content:space-between;
+  align-items:center;
   background-color: var(--nav-bar);
   padding: 1rem;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   cursor:pointer;
 `;
 

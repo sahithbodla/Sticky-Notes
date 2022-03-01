@@ -1,4 +1,4 @@
-import { NotesHolder, NotesValue } from "../../Routes/Home/style";
+import { NotesHolder, NotesValue } from "../../Routes/Home/Homepage.style";
 import styled from "styled-components";
 export const NotesList = styled.div`
   display: flex;

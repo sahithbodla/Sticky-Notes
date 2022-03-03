@@ -1,15 +1,11 @@
-import { UseStateContext } from "../../Context/stateContext";
 import { NewNote } from "./newNote";
 import { NotesList } from "./notes.style";
 
-export const ListOfNotes = () => {
-    const {
-      state: { arrayOfNotes }
-    } = UseStateContext();
+export const ListOfNotes = ({filteredNotes}) => {
     return (
       <NotesList>
-        {arrayOfNotes.length !== 0 &&
-          arrayOfNotes.map(({ title, notesContent, noteColor, id,label }) => (
+        {filteredNotes.length !== 0? 
+          filteredNotes.map(({ title, notesContent, noteColor, id,label }) => (
             <NewNote
               title={title}
               notesContent={notesContent}
@@ -17,7 +13,9 @@ export const ListOfNotes = () => {
               id={id}
               label={label}
             />
-          ))}
+          )):
+          <h1>Not found</h1>
+          }
       </NotesList>
     );
   };

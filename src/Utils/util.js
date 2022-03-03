@@ -1,7 +1,6 @@
 export function createNewLabel(labelName, dispatch, setLabelName,setOpenTag) {
     if(labelName!==''){
       dispatch({ type: "CREATE_NEW_LABEL", payload: labelName });
-      dispatch({type:'SET_LABEL_TO_NOTE',payload:labelName})
       setLabelName("");
       setOpenTag(false)
     }

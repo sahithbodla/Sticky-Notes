@@ -1,13 +1,13 @@
 import { SearchBar } from "..";
 import { useThemeContext } from "../../Context/themeContext";
 import { ToggleOff, ToggleOn } from "../../Svgs";
-import { Navbar } from "./header.style";
+import { Logo, Navbar } from "./header.style";
 export function Header({setSearchText}) {
   const { theme } = useThemeContext();
   return (
     <Navbar>
       {/* <Menu /> */}
-      <h2>Sticky Notes</h2>
+      <Logo>Sticky Notes</Logo>
       <SearchBar setSearchText={setSearchText}/>
         {theme==='Dark' ?<ToggleOff/>:<ToggleOn />}
     </Navbar>

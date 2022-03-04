@@ -7,7 +7,10 @@ justify-content:center;
 background-color:var(--primary-color);
 padding:0.5rem;
 width:600px;
-border-radius:0.5rem 
+border-radius:0.5rem;
+@media screen and (max-width: 600px){
+    width:230px;
+}
 `
 export const Input=styled.input`
 padding:0.5rem;
@@ -17,12 +20,15 @@ width:530px;
 font-size:larger;
 font-weight:bold;
 color:var(--secondary-color);
-background-color:var(--primary-color)
+background-color:var(--primary-color);
+@media screen and (max-width: 600px){
+    width:160px;
+}
 
 `
 export const SearchButton=styled(ToggleButton)`
     position:absolute;
-    left:0;
+    left:0rem;
     color:var(--secondary-color)
 
 `

@@ -11,7 +11,6 @@ function App() {
   } = UseStateContext();
   const [searchText, setSearchText] = useState("");
   const [filteredNotes, setFilteredNotes] = useState([]);
-  console.log(arrayOfNotes,filteredNotes)
   useEffect(() => {
     setFilteredNotes(
       arrayOfNotes.filter(
@@ -22,7 +21,6 @@ function App() {
       )
     );
   },[searchText,arrayOfNotes]);
-  console.log(arrayOfNotes,filteredNotes)
   return (
     <div className="App">
       <Header setSearchText={setSearchText}/>

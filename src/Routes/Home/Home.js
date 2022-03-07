@@ -6,11 +6,12 @@ import { UseStateContext } from "../../Context/stateContext";
 import { TitleDiv } from "../../Components/Body/title";
 import { NotesDiv } from "../../Components/Body/notesValue";
 import { NotesFeaturesDiv } from "../../Components/Body/notesFeatures";
+import { Toast } from "../../Components/Toast/toast.style";
 export function Home({filteredNotes}) {
-  const {dispatch} = UseStateContext();
+  const {state:{toast},dispatch} = UseStateContext();
   const [InputNotes, setInputNotes] = useState(false);
   const [noteColor, setNoteColor] = useState("var(--primary-color)");
-
+  console.log({toast})
   let noteRef = useRef(null);
   let props = { noteRef, noteColor, setNoteColor };
 
@@ -24,6 +25,7 @@ export function Home({filteredNotes}) {
   }, [dispatch]);
   return (
     <>
+      {toast!==''&&<Toast/>}
       <NotesBody>
         <NotesHolder style={{ backgroundColor: `${noteColor}` }}>
           {InputNotes && <TitleDiv noteColor={noteColor} />}

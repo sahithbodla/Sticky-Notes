@@ -24,12 +24,15 @@ margin-right:0.5rem;
 `
 export const Title = styled(Input)`
   width: 30rem;
-  background-color: var(--primary-color);
+
   margin-left:0;
   font-size: ${(props) => (props.name === "title" ? "x-large" : "large")};
   @media screen and (max-width: 600px){
     width: 20rem;
     margin-left:0
+  }
+  ::placeholder { 
+    color: var(--secondary-color);
   }
 `;
 export const PrimaryButton = styled.button`
@@ -66,16 +69,18 @@ export const AddNotes = styled(PrimaryButton)`
   font-size: large;
   color: var(--secondary-color);
   @media screen and (max-width: 600px){
-    font-size:small;
+    font-size:1rem;
+    font-weight: 600;
   }
 
 `;
 export const ClearNotes = styled(PrimaryButton)`
-  color: var(--nav-bar);
+  color: var(--secondary-color);
   font-weight: 900;
   font-size: large;
   @media screen and (max-width: 600px){
-    font-size:small;
+    font-size:1rem;
+    font-weight: 600;
   }
 `;
 export const AddLabel = styled.div`

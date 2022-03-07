@@ -71,7 +71,7 @@ export const AddNotes = styled(PrimaryButton)`
 
 `;
 export const ClearNotes = styled(PrimaryButton)`
-  color: blue;
+  color: var(--nav-bar);
   font-weight: 900;
   font-size: large;
   @media screen and (max-width: 600px){

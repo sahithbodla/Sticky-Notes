@@ -24,12 +24,14 @@ color:var(--secondary-color);
 background-color:var(--primary-color);
 @media screen and (max-width: 600px){
     width:160px;
+    font-size:small
 }
 
 `
 export const SearchButton=styled(ToggleButton)`
     position:absolute;
-    left:0rem;
+    left:0.5rem;
+    top:0.7rem;
     color:var(--secondary-color)
 
 `

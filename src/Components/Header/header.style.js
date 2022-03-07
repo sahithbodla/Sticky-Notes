@@ -11,7 +11,8 @@ export const Navbar = styled.div`
 `;
 export const Logo=styled.h2`
 @media (max-width: 768px){
-  font-size:large
+  width:105px;
+  font-size:small
 }
 
 `

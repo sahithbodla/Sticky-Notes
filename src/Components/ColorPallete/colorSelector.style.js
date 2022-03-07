@@ -16,7 +16,7 @@ export const colors = [
     fontColor:'black'
   },
   {
-    colorCode: "#3b82f6",
+    colorCode: "var(--nav-bar)",
     name: "blue",
     fontColor:'black'
   },

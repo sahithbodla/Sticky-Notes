@@ -16,7 +16,7 @@ export const colors = [
     fontColor:'black'
   },
   {
-    colorCode: "var(--nav-bar)",
+    colorCode: "#6366f1",
     name: "blue",
     fontColor:'black'
   },
@@ -29,7 +29,7 @@ export const Color = styled.button`
   border-radius: 50%;
   padding: 0.7rem;
   margin: 0.1rem;
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--secondary-color);
   @media (max-width: 768px){
     padding: 0.5rem;
     margin: 0.1rem;

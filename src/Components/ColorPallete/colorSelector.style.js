@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const colors = [
   {
-    colorCode: "#fda4af",
+    colorCode: "#ef4444",
     name: "red",
     fontColor:'black'
   },
@@ -11,7 +11,7 @@ export const colors = [
     name: "white",
   },
   {
-    colorCode: "#86efac",
+    colorCode: "#15803d",
     name: "green",
     fontColor:'black'
   },

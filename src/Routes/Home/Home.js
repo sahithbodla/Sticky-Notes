@@ -3,10 +3,10 @@ import { NotesBody, NotesHolder } from "./Homepage.style";
 import { v4 as id } from "uuid";
 import { ListOfNotes } from "../../Components/Notes/listofNotes";
 import { UseStateContext } from "../../Context/stateContext";
-import { TitleDiv } from "../../Components/Body/title";
-import { NotesDiv } from "../../Components/Body/notesValue";
-import { NotesFeaturesDiv } from "../../Components/Body/notesFeatures";
 import { Toast } from "../../Components/Toast/toast.style";
+import { TitleDiv } from "../../Components/Notes/title";
+import { NotesDiv } from "../../Components/Notes/notesValue";
+import { NotesFeaturesDiv } from "../../Components/Notes/notesFeatures";
 export function Home({filteredNotes}) {
   const {state:{toast},dispatch} = UseStateContext();
   const [InputNotes, setInputNotes] = useState(false);

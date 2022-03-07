@@ -38,6 +38,8 @@ export const notesReducer = (state, { type, payload }) => {
         JSON.stringify([...state.tags, { name: payload }] )
       );
       return { ...state, tags: [...state.tags, { name: payload }] }
+      case 'TOAST':
+        return{...state,toast:payload}
     case 'CLEAR_TOAST':
       return{...state,toast:''}
     default:

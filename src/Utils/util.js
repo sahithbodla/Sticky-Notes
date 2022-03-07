@@ -27,10 +27,15 @@ export function createNewLabel(labelName, dispatch, setLabelName,setOpenTag) {
           noteColor: noteColor,
           id: id,
           label: label,
-        },
+        }
       });
+    }else if(title === ""){
+      dispatch({type:'TOAST',payload:'Title Name required'})
     }
-    dispatch({ type: "SET_TITLE", payload: "" });
+    else if(notesContent === ""){
+      dispatch({type:'TOAST',payload:'Enter notes content'})
+    }
+    dispatch({ type: "SET_TITLE", payload: "" })
     noteRef.current.innerText = "";
   }
   

@@ -30,4 +30,8 @@ export const Color = styled.button`
   padding: 0.7rem;
   margin: 0.1rem;
   border: 1px solid var(--primary-color);
+  @media (max-width: 768px){
+    padding: 0.5rem;
+    margin: 0.1rem;
+  }
 `;

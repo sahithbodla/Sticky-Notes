@@ -6,6 +6,7 @@ export const NotesBody = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-basis: 100px;
 `;
 export const NotesHolder = styled.div`
   margin: 5rem;
@@ -13,6 +14,10 @@ export const NotesHolder = styled.div`
   width: 500px;
   box-shadow: var(--box-color-tb) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border-radius: 1rem;
+  @media screen and (max-width: 600px){
+    width:350px;
+    margin: 1rem;
+  }
 `;
 export const CheckBox=styled.input`
 margin-right:0.5rem;
@@ -20,7 +25,12 @@ margin-right:0.5rem;
 export const Title = styled(Input)`
   width: 30rem;
   background-color: var(--primary-color);
+  margin-left:0;
   font-size: ${(props) => (props.name === "title" ? "x-large" : "large")};
+  @media screen and (max-width: 600px){
+    width: 20rem;
+    margin-left:0
+  }
 `;
 export const PrimaryButton = styled.button`
   background-color: transparent;
@@ -30,6 +40,10 @@ export const PrimaryButton = styled.button`
   margin: 1rem;
   cursor: pointer;
   color: var(--secondary-color);
+  @media screen and (max-width: 600px){
+    margin:0;
+    padding:0.5rem; 
+   }
 `;
 export const NotesValue = styled.div`
   &:empty::before {
@@ -41,6 +55,9 @@ export const NotesValue = styled.div`
   width: 30rem;
   padding: 0.5rem;
   font-size: large;
+  @media screen and (max-width: 600px){
+    width: 22rem;
+  }
 `;
 
 export const AddNotes = styled(PrimaryButton)`
@@ -48,11 +65,18 @@ export const AddNotes = styled(PrimaryButton)`
   font-weight: 600;
   font-size: large;
   color: var(--secondary-color);
+  @media screen and (max-width: 600px){
+    font-size:small;
+  }
+
 `;
 export const ClearNotes = styled(PrimaryButton)`
   color: blue;
-  font-weight: 600;
+  font-weight: 900;
   font-size: large;
+  @media screen and (max-width: 600px){
+    font-size:small;
+  }
 `;
 export const AddLabel = styled.div`
   z-index:1;
@@ -89,6 +113,7 @@ export const NoteFeatures = styled(NotesBody)`
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
+
 `;
 export const ListOfNotes = styled(NotesBody)`
   flex-direction: row;
@@ -103,5 +128,8 @@ display:flex;
 align-items:center;
 &:hover{
   background-color: var(--box-hover);
+}
+@media screen and (max-width: 600px){
+  padding:0.1rem;
 }
 `

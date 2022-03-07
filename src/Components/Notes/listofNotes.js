@@ -14,7 +14,7 @@ export const ListOfNotes = ({filteredNotes}) => {
               label={label}
             />
           )):
-          <h1>Not found</h1>
+          <h2>Notes Appear here....</h2>
           }
       </NotesList>
     );

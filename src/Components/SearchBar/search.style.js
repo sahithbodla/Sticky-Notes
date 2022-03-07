@@ -19,6 +19,7 @@ outline:none;
 width:530px;
 font-size:larger;
 font-weight:bold;
+margin-left:1rem;
 color:var(--secondary-color);
 background-color:var(--primary-color);
 @media screen and (max-width: 600px){

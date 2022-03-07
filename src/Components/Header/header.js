@@ -7,7 +7,7 @@ export function Header({setSearchText}) {
   return (
     <Navbar>
       {/* <Menu /> */}
-      <Logo>Sticky Notes</Logo>
+      <Logo>Sticky NoteZ</Logo>
       <SearchBar setSearchText={setSearchText}/>
         {theme==='Dark' ?<ToggleOff/>:<ToggleOn />}
     </Navbar>

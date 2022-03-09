@@ -5,6 +5,7 @@ justify-content:space-between;
 align-items:center;
 bottom:0;
 margin:1rem;
+ color:white;
 @media screen and (max-width: 600px){
    position:relative;
    display:flex; 

@@ -5,7 +5,7 @@ export function Footer() {
     <FooterDiv>
       <span>Devloped by Pavan Vineeth Reddy</span>
       <a
-        style={{ color: "white"}}
+        style={{ color: 'var(--secondary-color)'}}
         href="https://github.com/vineeth-t/Sticky-Notes/tree/development"
         target="_blank"
         rel="noreferrer"

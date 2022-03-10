@@ -7,7 +7,9 @@ export const Navbar = styled.div`
   padding: 1rem;
   color: var(--secondary-color);
   cursor:pointer;
- 
+  @media (max-width: 768px){
+    width:auto;
+  }
 `;
 export const Logo=styled.h2`
 @media (max-width: 768px){

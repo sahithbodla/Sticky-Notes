@@ -10,7 +10,8 @@ padding:0.5rem;
 width:600px;
 border-radius:0.5rem;
 @media screen and (max-width: 600px){
-    width:230px;
+     width:220px;
+
 }
 `
 export const Input=styled.input`
@@ -24,8 +25,9 @@ margin-left:1rem;
 color:var(--secondary-color);
 background-color:var(--primary-color);
 @media screen and (max-width: 600px){
-    width:160px;
-    font-size:small
+    width:150px;
+    margin-left:0rem;
+    padding:0.5rem 0;
 }
 
 `

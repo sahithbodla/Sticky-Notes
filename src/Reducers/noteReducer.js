@@ -28,7 +28,8 @@ export const notesReducer = (state, { type, payload }) => {
       return {
         ...state,
         arrayOfNotes: state.arrayOfNotes.filter(({ id }) => id !== payload),
-        toast:'Notes Deleted'
+        toast:'Notes Deleted',
+        dialogbox:false
       };
     case "SET_LABELS":
       return { ...state, tags:payload}
@@ -42,6 +43,8 @@ export const notesReducer = (state, { type, payload }) => {
         return{...state,toast:payload}
     case 'CLEAR_TOAST':
       return{...state,toast:''}
+    case 'SHOW_DIALOG_BOX':
+       return {...state,dialogbox:payload.flag,id:payload.id}
     default:
       return { ...state };
   }

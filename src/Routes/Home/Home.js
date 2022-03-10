@@ -11,7 +11,6 @@ export function Home({filteredNotes}) {
   const {state:{toast},dispatch} = UseStateContext();
   const [InputNotes, setInputNotes] = useState(false);
   const [noteColor, setNoteColor] = useState("var(--primary-color)");
-  console.log({toast})
   let noteRef = useRef(null);
   let props = { noteRef, noteColor, setNoteColor };
 
@@ -26,7 +25,9 @@ export function Home({filteredNotes}) {
   return (
     <>
       {toast!==''&&<Toast/>}
+    
       <NotesBody>
+  
         <NotesHolder style={{ backgroundColor: `${noteColor}` }}>
           {InputNotes && <TitleDiv noteColor={noteColor} />}
           <NotesDiv noteRef={noteRef} setInputNotes={setInputNotes} />

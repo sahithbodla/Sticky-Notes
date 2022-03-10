@@ -8,6 +8,8 @@ export const StateProvider=({children})=>{
         title: "",
         notesContent: "",
         arrayOfNotes: [],
+        id:'',
+        dialogbox:false,
         toast:'',
         label:'Reminder',
         tags :[

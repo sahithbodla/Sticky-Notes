@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { UseStateContext } from "../../Context/stateContext";
+import { useState } from "react"; 
 import { DivTag, NoteFeatures } from "../../Routes/Home/Homepage.style";
 import { DeleteIcon } from "../../Svgs";
 import { More } from "../../Svgs/menu";
@@ -8,7 +7,6 @@ import { LabelList } from "../Labels/label";
 import { Notes, NotesContent, NotesTitle } from "./notes.style";
 
 export const NewNote = ({ id, title, notesContent, noteColor, label }) => {
-  const { dispatch } = UseStateContext();
   const [openTag, setOpenTag] = useState(false);
   return (
     <Notes style={{ backgroundColor: `${noteColor}` }}>
@@ -30,7 +28,7 @@ export const NewNote = ({ id, title, notesContent, noteColor, label }) => {
             setOpenTag={setOpenTag}
           />
         )}
-        <DeleteIcon dispatch={dispatch} id={id} />
+        <DeleteIcon id={id} />
       </NoteFeatures>
     </Notes>
   );

@@ -4,6 +4,7 @@ export const Search= styled.div`
 position:relative;
 display:flex;
 justify-content:center;
+align-items:center;
 background-color:var(--primary-color);
 padding:0.5rem;
 width:600px;

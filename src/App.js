@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
           {dialogbox&&<DialogBox/>}
-      <Header setSearchText={setSearchText}/>
+      <Header searchText={searchText} setSearchText={setSearchText}/>
       <Routes>
         <Route path="/" element={<Home  filteredNotes={filteredNotes} />} />
       </Routes>

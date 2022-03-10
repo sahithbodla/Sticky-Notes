@@ -25,9 +25,7 @@ export function Home({filteredNotes}) {
   return (
     <>
       {toast!==''&&<Toast/>}
-    
       <NotesBody>
-  
         <NotesHolder style={{ backgroundColor: `${noteColor}` }}>
           {InputNotes && <TitleDiv noteColor={noteColor} />}
           <NotesDiv noteRef={noteRef} setInputNotes={setInputNotes} />

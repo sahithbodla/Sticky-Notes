@@ -7,7 +7,7 @@ export function SearchBar({searchText, setSearchText }) {
       <Input
         value={searchText}
         onInput={(event) => setSearchText(event.target.value)}
-        placeholder="Search Notes"
+        placeholder="Search Notes using Title/Content"
       />
       <SearchButton>
         <SearchSvg />

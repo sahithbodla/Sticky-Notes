@@ -29,13 +29,14 @@ export function createNewLabel(labelName, dispatch, setLabelName,setOpenTag) {
           label: label,
         }
       });
+       dispatch({ type: "SET_TITLE", payload: "" })
+       noteRef.current.innerText = "";
     }else if(title === ""){
       dispatch({type:'TOAST',payload:'Title Name required'})
     }
     else if(notesContent === ""){
       dispatch({type:'TOAST',payload:'Enter notes content'})
     }
-    dispatch({ type: "SET_TITLE", payload: "" })
-    noteRef.current.innerText = "";
+   
   }
   

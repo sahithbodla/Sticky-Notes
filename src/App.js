@@ -16,9 +16,9 @@ function App() {
     setFilteredNotes(
       arrayOfNotes.filter(
         (note) =>
-          note.title.match(searchText) ||
-          note.notesContent.match(searchText) ||
-          note.label.match(searchText)
+          note.title.toUpperCase().match(searchText.toUpperCase()) ||
+          note.notesContent.toUpperCase().match(searchText.toUpperCase()) ||
+          note.label.toUpperCase().match(searchText.toUpperCase())
       )
     );
   }, [searchText, arrayOfNotes]);

@@ -3,8 +3,7 @@ import { createContext, useContext, useState } from "react";
 export const ThemeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(
-    JSON.parse(localStorage?.getItem("theme") || "Dark")
-  );
+    JSON.parse(localStorage?.getItem("theme")) || "Dark");
   themeChanger(theme);
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

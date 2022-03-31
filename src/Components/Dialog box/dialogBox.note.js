@@ -13,7 +13,7 @@ export const NotesDialogBox = ({ id }) => {
   const [notesTitle, setNotesTitle] = useState(title);
   const [notesValue, setNotesvalue] = useState(notesContent);
   return (
-    <Notes style={{ backgroundColor: `${noteColor}` }}>
+    <Notes  style={{ backgroundColor: `${noteColor}`,margin:'7rem auto' }}>
       <NotesTitle
         onInput={(event) => setNotesTitle(event.target.innerText)}
         contentEditable="true"

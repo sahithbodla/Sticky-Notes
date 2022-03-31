@@ -10,6 +10,7 @@ export const StateProvider=({children})=>{
         arrayOfNotes: [],
         id:'',
         dialogbox:false,
+        showIndividualNotes:false,
         toast:'',
         label:'Reminder',
         tags :[

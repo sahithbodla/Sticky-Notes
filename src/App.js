@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import { Header } from "./Components";
 import { Home } from "./Routes";
-import './index.css';
+import "./index.css";
 import { useEffect, useState } from "react";
 import { UseStateContext } from "./Context/stateContext";
 import { Footer } from "./Components/Footer/footer";
 import { DialogBox } from "./Components/Dialog box/dialogbox";
 function App() {
   const {
-    state: { arrayOfNotes,dialogbox },
+    state: { arrayOfNotes, dialogbox },
   } = UseStateContext();
   const [searchText, setSearchText] = useState("");
   const [filteredNotes, setFilteredNotes] = useState([]);
@@ -16,20 +16,21 @@ function App() {
     setFilteredNotes(
       arrayOfNotes.filter(
         (note) =>
-          ( (note.title.match(searchText) ||
-          note.notesContent.match(searchText) ||note.label.match(searchText) )
-          )
+          note.title.match(searchText) ||
+          note.notesContent.match(searchText) ||
+          note.label.match(searchText)
       )
     );
-  },[searchText,arrayOfNotes]);
+  }, [searchText, arrayOfNotes]);
+  console.log(dialogbox)
   return (
     <div className="App">
-          {dialogbox&&<DialogBox/>}
-      <Header searchText={searchText} setSearchText={setSearchText}/>
+      {dialogbox && <DialogBox />}
+      <Header searchText={searchText} setSearchText={setSearchText} />
       <Routes>
-        <Route path="/" element={<Home  filteredNotes={filteredNotes} />} />
+        <Route path="/" element={<Home filteredNotes={filteredNotes} />} />
       </Routes>
-        <Footer/>
+      <Footer />
     </div>
   );
 }
